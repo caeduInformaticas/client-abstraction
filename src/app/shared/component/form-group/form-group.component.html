@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+  <div class="form-container">
+    <h1>{{ title }}</h1>
+    <app-form-input *ngFor="let control of formControls"
+      [controlKey]="control.key"
+      [controlType]="control.type"
+      [formGroup]="formGroup">
+    </app-form-input>
+    <button class="form-container-button" type="submit" [disabled]="formGroup.invalid">{{ buttonLabel }}</button>
+  </div>
+</form>

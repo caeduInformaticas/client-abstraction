@@ -1,0 +1,7 @@
+<div class="input-container" [formGroup]="formGroup">
+  <label [for]="controlKey">{{ controlKey | titlecase }}</label>
+  <input [type]="controlType" [formControlName]="controlKey" [id]="controlKey" class="input-field" />
+  <div *ngIf="formGroup.get(controlKey)?.invalid && formGroup.get(controlKey)?.touched" class="error-message">
+    <small>Campo inválido</small>
+  </div>
+</div>
