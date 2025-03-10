@@ -1,11 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Injectable, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { BaseRegisterForm, InputFormControl } from '../interface/register.interface';
-import { CommonModule } from '@angular/common';
 
-@Component({
-  template: ''
-})
+@Injectable()
 export abstract class BaseRegisterComponent<T extends BaseRegisterForm> implements OnInit {
   @Input() formData!: Partial<T>;
   @Input() formControls!: InputFormControl[];
